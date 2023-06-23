@@ -3,16 +3,38 @@
 import random
 import string
 import sys
-
-print("Hello! I am a little sploit. I could be written on any language, but "
-      "my author loves Python. Look at my source - it is really simple. "
-      "I should steal flags and print them on stdout or stderr. ")
+import requests
+import json
+from pwn import *
 
 host = sys.argv[1]
 print("I need to attack a team with host: {}".format(host))
 
-print("Here are some random flags for you:")
+# Server supplying the flag's ids
+server = 'http://10.10.0.1:8081/flagIds'
 
-for _ in range(3):
-    flag = ''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(31)) + '='
-    print(flag, flush=True)
+
+# requesting flags ids 
+response = requests.get(server)
+data = response.json();
+    
+# for every host the APIs returns 5 ids 
+# (runnin 5 exploit on the same host)
+for i in range(5):
+    data2 = json.loads(data['TiCCket'][host][i])
+    print(data2)
+    var1 = data2['var1 name']
+    var2 = data2['var2 name']
+    #       ...      ...
+
+
+
+    r = remote(host, 1337)
+    r.sendafter(b"> ", b"1\n")
+    #       ...      ...
+    
+
+
+
+    print(r.recv(), flush=True)
+
