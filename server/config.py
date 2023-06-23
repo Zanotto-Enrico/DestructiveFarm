@@ -29,7 +29,7 @@ CONFIG = {
     # The server will submit not more than SUBMIT_FLAG_LIMIT flags
     # every SUBMIT_PERIOD seconds. Flags received more than
     # FLAG_LIFETIME seconds ago will be skipped.
-    'SUBMIT_FLAG_LIMIT': 300,
+    'SUBMIT_FLAG_LIMIT': 500,
     'SUBMIT_PERIOD': 2,
     'FLAG_LIFETIME': 10 * 60,
 
