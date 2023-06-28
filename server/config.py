@@ -15,8 +15,8 @@ CONFIG = {
     #'SYSTEM_PORT': 31337,
 
     'SYSTEM_PROTOCOL': 'CCIT_http',
-    'SYSTEM_URL': 'http://10.10.0.1:8080/flags',
-    'SYSTEM_TOKEN': 'd7e873cfdcfd510662d3a086d64b4f3c',
+    'SYSTEM_URL': 'http://localhost:8080/flags',
+    'SYSTEM_TOKEN': '41247bcc42b8142b6e366ab8dd4f9252',
 
     # 'SYSTEM_PROTOCOL': 'volgactf',
     # 'SYSTEM_HOST': '127.0.0.1',
